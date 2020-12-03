@@ -22,7 +22,7 @@ listed below.
 Copyright 2020 Iwo 'Outfrost' Bujkiewicz
 
 This is free/libre software, released under the MIT License.
-See LICENSE.md for license terms.
+See LICENSE for license terms.
 
 Noto fonts (`fonts/Noto/`) Copyright 2018 The Noto Project Authors.
 Noto is licensed under the SIL Open Font License, Version 1.1,
