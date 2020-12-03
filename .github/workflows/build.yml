@@ -1,0 +1,55 @@
+name: Build
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  export_project:
+    # Always use ubuntu-latest for this action
+    runs-on: ubuntu-latest
+    name: Export project
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2.3.3
+
+    - name: Export
+      uses: firebelley/godot-export@v2.6.0
+      with:
+        godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/3.2.3/Godot_v3.2.3-stable_linux_headless.64.zip
+        godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/3.2.3/Godot_v3.2.3-stable_export_templates.tpz
+        relative_project_path: ./
+        create_release: false
+        use_preset_export_path: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Upload Linux X11 i686 build
+      uses: actions/upload-artifact@v2
+      with:
+        name: bpm-Linux-X11-i686
+        path: build/linux_i686/bpm-Linux-X11-i686/
+        if-no-files-found: error
+
+    - name: Upload Windows i686 build
+      uses: actions/upload-artifact@v2
+      with:
+        name: bpm-Windows-i686
+        path: build/windows_i686/bpm-Windows-i686/
+        if-no-files-found: error
+
+    - name: Upload macOS build
+      uses: actions/upload-artifact@v2
+      with:
+        name: bpm-macOS
+        path: build/macos/bpm-macOS/
+        if-no-files-found: error
+
+    - name: Upload HTML5 build
+      uses: actions/upload-artifact@v2
+      with:
+        name: bpm-HTML5
+        path: build/html5/bpm-HTML5/
+        if-no-files-found: error
