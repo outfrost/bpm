@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://fonts/Noto/NotoMono-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://MainView.gd" type="Script" id=2]
+[ext_resource path="res://src/MainView.gd" type="Script" id=2]
 [ext_resource path="res://styles/style_box_normal.tres" type="StyleBox" id=3]
 [ext_resource path="res://styles/style_box_pressed.tres" type="StyleBox" id=4]
 [ext_resource path="res://styles/style_box_empty.tres" type="StyleBox" id=5]
-[ext_resource path="res://About.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/About.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fonts/font_normal.tres" type="DynamicFont" id=7]
 
 [sub_resource type="DynamicFont" id=1]

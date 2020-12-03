@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/itchio-16.png-e5d5a71e584a8fa88bad2dc374c164ca.stex"
+path="res://.import/itchio-16.png-1ba6401884cc32475223768db05d3b42.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://itchio-16.png"
-dest_files=[ "res://.import/itchio-16.png-e5d5a71e584a8fa88bad2dc374c164ca.stex" ]
+source_file="res://images/itchio-16.png"
+dest_files=[ "res://.import/itchio-16.png-1ba6401884cc32475223768db05d3b42.stex" ]
 
 [params]
 
