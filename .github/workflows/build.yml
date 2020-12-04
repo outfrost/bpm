@@ -29,7 +29,6 @@ jobs:
     - name: Copy readme and license
       run: |
         for TARGET in build/*/*/; do
-          echo "${TARGET}" >&2
           cp README.md LICENSE "${TARGET}"
         done
 
