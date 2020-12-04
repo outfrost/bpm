@@ -17,13 +17,13 @@ jobs:
 
     - name: Copy readme and license
       run: |
-        for TARGET in \
-          build/linux_i686/bpm-Linux-X11-i686/ \
-          build/windows_i686/bpm-Windows-i686/ \
-          build/macos/bpm-macOS/ \
-          build/html5/bpm-HTML5/ \
-        ; do
-          mkdir -p "${TARGET}"
+#        for TARGET in \
+#          build/linux_i686/bpm-Linux-X11-i686/ \
+#          build/windows_i686/bpm-Windows-i686/ \
+#          build/macos/bpm-macOS/ \
+#          build/html5/bpm-HTML5/ \
+        for TARGET in build/*/*/; do
+          echo "${TARGET}" >&2
           cp README.md LICENSE "${TARGET}"
         done
 
