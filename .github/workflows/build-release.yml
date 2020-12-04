@@ -18,6 +18,18 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Copy readme and license
+      run: |
+        for TARGET in \
+          build/linux_i686/bpm-Linux-X11-i686/ \
+          build/windows_i686/bpm-Windows-i686/ \
+          build/macos/bpm-macOS/ \
+          build/html5/bpm-HTML5/ \
+        ; do
+          mkdir -p "${TARGET}"
+          cp README.md LICENSE "${TARGET}"
+        done
+
       # Job creates release under the same version as the tag
     - name: Get version from tag
       id: tag_version
@@ -33,5 +45,6 @@ jobs:
         create_release: true
         generate_release_notes: true
         base_version: ${{ steps.tag_version.outputs.TAG_VERSION }}
+        use_preset_export_path: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
