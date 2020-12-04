@@ -1,5 +1,6 @@
 # Build
-/build/
+/build/**
+!/build/.gdignore
 
 # Debug script
 /[Dd]ebug.gd
