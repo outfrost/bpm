@@ -15,18 +15,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2.3.3
 
-    - name: Copy readme and license
-      run: |
-        for TARGET in \
-          build/linux_i686/bpm-Linux-X11-i686/ \
-          build/windows_i686/bpm-Windows-i686/ \
-          build/macos/bpm-macOS/ \
-          build/html5/bpm-HTML5/ \
-        ; do
-          echo "${TARGET}" >&2
-          cp README.md LICENSE "${TARGET}"
-        done
-
     - name: Export
       uses: firebelley/godot-export@v2.6.0
       with:
@@ -37,6 +25,13 @@ jobs:
         use_preset_export_path: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Copy readme and license
+      run: |
+        for TARGET in build/*/*/; do
+          echo "${TARGET}" >&2
+          cp README.md LICENSE "${TARGET}"
+        done
 
     - name: Upload Linux X11 i686 build
       uses: actions/upload-artifact@v2
