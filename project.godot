@@ -30,6 +30,14 @@ window/size/width=640
 window/size/height=360
 window/vsync/use_vsync=false
 
+[editor_plugins]
+
+enabled=PoolStringArray( "extras_exporter" )
+
+[extras_exporter]
+
+files_to_include=PoolStringArray( "LICENSE", "README.md", "screenshot.png" )
+
 [input]
 
 ui_focus_next={
