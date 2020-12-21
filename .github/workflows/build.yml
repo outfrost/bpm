@@ -26,12 +26,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Copy readme and license
-      run: |
-        for TARGET in build/*/*/; do
-          cp LICENSE README.md screenshot.png "${TARGET}"
-        done
-
     - name: Upload Linux X11 i686 build
       uses: actions/upload-artifact@v2
       with:
