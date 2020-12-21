@@ -33,10 +33,10 @@ class Exporter extends EditorExportPlugin:
 		for file in include_files:
 			if macos_build:
 				print("[Extras Exporter] Adding %s to macOS archive" % file)
-				OS.execute("/usr/bin/zip", ["-rq", build_path, file], true, output, true)
+				OS.execute("zip", ["-rq", build_path, file], true, output, true)
 			else:
 				print("[Extras Exporter] Copying %s to build directory" % file)
-				OS.execute("/usr/bin/cp", ["-fR", file, build_dir], true, output, true)
+				OS.execute("cp", ["-fR", file, build_dir], true, output, true)
 			for s in output:
 					if !s.empty():
 						printerr("[Extras Exporter] ", s)
